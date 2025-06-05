@@ -17,3 +17,7 @@ class Hot_Dog(Lanche):
         self.proteina = proteina
         self.molho = molho
         self.ovo = ovo
+
+class Salsipao(Lanche):
+    def __init__(self, condimento):
+        super().__init__(condimento)
