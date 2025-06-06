@@ -1,4 +1,14 @@
 from lanche import *
+from implementacao import *
 
-burger = Hamburguer(2, 2, True, "Mostarda")
-print(burger)
+ketchup = Ketchup()
+mostarda = Mostarda()
+both = Both()
+boi = Boi()
+frango = Frango()
+
+hamburguer = Hamburguer(boi, "cheddar", "picles", ketchup)
+salsipao = (Frango, "barbecue", "ovo", mostarda)
+
+print(hamburguer.preparar())
+print(salsipao.preparar())

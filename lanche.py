@@ -1,23 +1,31 @@
 from abc import ABC
+from implementacao import *
+
 
 class Lanche(ABC):
-    def __init__(self, condimento):
+    def __init__(self, carne: Carne, condimento: Condimento):
+        self.carne = carne
         self.condimento = condimento
 
+    def preparar(self):
+        pass
+
 class Hamburguer(Lanche):
-    def __init__(self, carne, queijo, picles , condimento):
+    def __init__(self, carne: Carne, queijo, picles, condimento: Condimento):
         super().__init__(condimento)
-        self.carnes = carne
-        self.queijos = queijo
+        self.carne = carne
+        self.queijo = queijo
         self.picles = picles
 
-class Hot_Dog(Lanche):
-    def __init__(self, proteina, molho, ovo, condimento):
+    def preparar(self):
+        return f"Hambúrguer de {self.carne.grelhar()} com {self.queijo}, {self.picles} e {self.condimento.adicionar()}"
+
+class Salsipao(Lanche):
+    def __init__(self, carne: Carne, molho, ovo, condimento: Condimento):
         super().__init__(condimento)
-        self.proteina = proteina
+        self.carne = carne
         self.molho = molho
         self.ovo = ovo
 
-class Salsipao(Lanche):
-    def __init__(self, condimento):
-        super().__init__(condimento)
+    def preparar(self):
+        return f"Salsipão de {self.carne.grelhar} com {self.molho}, ovo e {self.condimento.adicionar()}"
