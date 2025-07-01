@@ -4,11 +4,11 @@ from implementacao import *
 ketchup = Ketchup()
 mostarda = Mostarda()
 both = Both()
-boi = Boi()
+vaca = Vaca()
 frango = Frango()
 
-hamburguer = Hamburguer(boi, "cheddar", "picles", ketchup)
-salsipao = (Frango, "barbecue", "ovo", mostarda)
+hamburguer = Hamburguer(vaca, "cheddar", "picles", ketchup)
+salchipao = Salchipao(frango, "barbecue", "ovo", mostarda)
 
 print(hamburguer.preparar())
-print(salsipao.preparar())
+print(salchipao.preparar())
